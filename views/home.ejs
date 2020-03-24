@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Run</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+        <a class="navbar-brand" href="/">LSCodeSch</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar Ends -->
+
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col lefthand">
+                  <div class="card mt-5"  style="max-width: 18rem;">
+                      <div class="card-header bg-success text-white">Test Run</div>
+                      <div class="card-body">
+                        <form action="/upload" method="POST">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Upload Image</label>
+                              <input type="text" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                             
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Your Name</label>
+                              <input type="text" name="name" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="col righthand">
+                  <div class="container">
+                      <div class="row">
+                          <% let i = 0; profile.forEach(person => { %> 
+                            <div class="col-md-6">
+                            <div class="card" style="width: 16rem;">
+                                <img src="<%= person.image %>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <p class="card-text"><%= person.name %></p>
+                                </div>
+                            </div>
+                          </div>
+                          <% }) %>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+</body>
+</html>

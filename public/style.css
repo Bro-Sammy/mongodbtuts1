@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lefthand{
+    background-image: url('https://images.unsplash.com/photo-1520583457224-aee11bad5112?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80');
+    background-size: contain;
+    background-position: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 10%;
+}
